@@ -1,2 +1,2 @@
-# Maltese Christian Statue Classifier
+# Maltese Christian Statue (MCS) Classifier
  
