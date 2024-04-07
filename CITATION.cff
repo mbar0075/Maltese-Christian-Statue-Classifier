@@ -1,0 +1,30 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Maltese Christian Statue Classifier
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Matthias
+    family-names: Bartolo
+    email: matthias.bartolo.21@um.edu.mt
+    affiliation: University of Malta
+    orcid: 'https://orcid.org/0009-0006-1353-4556'
+repository-code: 'https://github.com/mbar0075/Maltese-Christian-Statue-Classifier'
+abstract: >-
+  The "Maltese Christian Statue (MCS) Classifier" project represents a meticulous effort to safeguard and promote Maltese religious culture, particularly during the solemn period of Lent. Through the utilization of the curated "MCS Dataset," comprising 13 distinct categories of Maltese Christian statues, the project aims to instill appreciation and understanding of Maltese religious iconography among tourists and locals alike. Leveraging advanced image classification techniques, the project introduces artificial intelligence into the realm of Maltese Christianity, with a solemn tone emphasizing respect and reverence for religious beliefs. By offering a platform for cultural education and appreciation, the MCS Classifier project aspires to enrich the understanding and perpetuation of Maltese religious heritage, potentially fostering greater dedication and belief in its sacred traditions.
+keywords:
+  - Artificial Intelligence
+  - Maltese Culture
+  - Christianity
+  - Image Classification
+  - Deep Learning
+  - Convolutional Neural Networks
+  - Computer Vision
+  - Tourism
+license: MIT
+version: 1.0.0
+date-released: '2024-05-12'
