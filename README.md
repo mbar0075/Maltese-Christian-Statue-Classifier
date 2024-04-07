@@ -20,7 +20,7 @@ The `Maltese Christian Statue (MCS) Classifier` project is not just a machine le
 
 This initiative aims to safeguard and promote Maltese religious culture, especially during the solemn period of Lent. It serves as a bridge, introducing tourists to the intricacies of Maltese religious iconography, fostering understanding and appreciation.
 
-Employing sophisticated image classification techniques, the project integrates artificial intelligence into the realm of Maltese Christianity, introducing AI where it's traditionally less explored. However, it's crucial to emphasize that this project isn't designed for mockery or disrespect towards religious beliefs. On the contrary, it adopts a solemn tone, seeking to uplift and deepen religious engagement.
+Employing sophisticated image classification techniques, the project integrates artificial intelligence into the realm of Maltese Christianity, introducing AI where it's traditionally less explored. However, it's crucial to emphasise that this project isn't designed for mockery or disrespect towards religious beliefs. On the contrary, it adopts a solemn tone, seeking to uplift and deepen religious engagement.
 
 Ultimately, the project aspires to contribute positively to the perpetuation and enrichment of Maltese religious heritage, potentially inspiring greater belief and dedication to its cause.
 
@@ -77,13 +77,13 @@ Creating the MCS Classifier Model involved constructing a Convolutional Neural N
 
 This configuration was chosen to facilitate efficient training by leveraging transfer learning techniques, utilising models pretrained on larger datasets. After model creation via the Keras API, training curves and a confusion matrix were generated to assess model performance, as depicted below.
 
-`Training curves` offer a visual representation of the model's performance throughout the training process. These curves typically include plots of metrics such as loss and accuracy over epochs. Loss curves depict the model's error during training, showing how effectively the model is learning from the data. A decreasing loss indicates that the model is improving in its ability to make predictions. Accuracy curves illustrate the model's performance in terms of correctly classified samples over training epochs. By analyzing training curves, researchers can identify trends, assess convergence, and determine whether further training is necessary.
+`Training curves` offer a visual representation of the model's performance throughout the training process. These curves typically include plots of metrics such as loss and accuracy over epochs. Loss curves depict the model's error during training, showing how effectively the model is learning from the data. A decreasing loss indicates that the model is improving in its ability to make predictions. Accuracy curves illustrate the model's performance in terms of correctly classified samples over training epochs. By analysing training curves, researchers can identify trends, assess convergence, and determine whether further training is necessary.
 
 <p align='center'>
   <img src="Assets/curves.png" alt="Training Curves" width="80%" height="auto">
 </p>
 
-On the other hand, a `confusion matrix` provides insight into the model's classification performance by summarizing the number of correct and incorrect predictions for each class. It displays a grid where rows represent the actual classes, while columns represent the predicted classes. Each cell in the matrix indicates the number of instances where a sample of a particular class was classified as another class. Confusion matrices enable a more detailed analysis of model performance, highlighting areas where the model struggles to distinguish between classes. By examining the confusion matrix, researchers can identify specific classes that may require further attention or improvement in the model architecture or training data.
+On the other hand, a `confusion matrix` provides insight into the model's classification performance by summarising the number of correct and incorrect predictions for each class. It displays a grid where rows represent the actual classes, while columns represent the predicted classes. Each cell in the matrix indicates the number of instances where a sample of a particular class was classified as another class. Confusion matrices enable a more detailed analysis of model performance, highlighting areas where the model struggles to distinguish between classes. By examining the confusion matrix, researchers can identify specific classes that may require further attention or improvement in the model architecture or training data.
 
 <p align='center'>
   <img src="Assets/cm.png" alt="Confusion Matrix" width="80%" height="auto">
