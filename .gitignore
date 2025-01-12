@@ -153,3 +153,4 @@ cython_debug/
 
 # Due to large files, models cannot be uploaded
 *.h5
+Augmented MCS Dataset/
