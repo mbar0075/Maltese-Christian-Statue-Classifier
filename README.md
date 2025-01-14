@@ -60,7 +60,7 @@ The categories in the MCS Dataset are:
 
 <p align="justify">
 
-The `MCS Dataset` consists of `2076` images distributed across the `13` classes. Illustrated below is the distribution of the dataset across the classes. Additionally it is also important to note that the dataset is split into `80%` training and `20%` testing sets. Furthermore, `Data Augmentation` techniques were also used to increase the size of the dataset.
+The `MCS Dataset` consists of `2432` images distributed across the `14` classes. Illustrated below is the distribution of the dataset across the classes. Additionally it is also important to note that the dataset is split into `80%` training and `20%` testing sets. Furthermore, `Data Augmentation` techniques were also used to increase the size of the dataset.
 
 <p align='center'>
   <img src="Assets/image_distribution.png" alt="Dataset Distribution" width="80%" height="auto">
