@@ -1,4 +1,4 @@
-# Maltese Christian Statue (MCS) Classifier
+# Maltese Christian Statue (MCS) Classification Dataset
  
 <p align='center'>
 <table align="center">
@@ -16,7 +16,7 @@
 
 <p align="justify">
 
-The `Maltese Christian Statue (MCS) Classifier` project is not just a machine learning model; it embodies a deeper mission. Developed from the `MCS Dataset`, curated to represent 13 distinct categories of Maltese Christian statues, this project serves to preserve and celebrate Maltese religious culture. Its purpose extends beyond mere classification; it is a testament to the rich heritage of Malta, offering a glimpse into its religious traditions.
+The `Maltese Christian Statue (MCS) Classifier` project is not just a machine learning model; it embodies a deeper mission. Developed from the `MCS Dataset`, curated to represent 17 distinct categories of Maltese Christian statues, this project serves to preserve and celebrate Maltese religious culture. Its purpose extends beyond mere classification; it is a testament to the rich heritage of Malta, offering a glimpse into its religious traditions.
 
 `Image classification` is a fundamental task in computer vision, involving the process of categorising images into predefined classes or categories. It leverages machine learning algorithms to analyse the visual content of images and assign them to appropriate labels based on their features and characteristics. In the context of the MCS Classifier project, image classification techniques are employed to automatically identify and categorise Maltese Christian statues depicted in images.
 
@@ -32,23 +32,27 @@ Ultimately, the project aspires to contribute positively to the perpetuation and
 
 <p align="justify">
 
-The `MCS Dataset` features `13` categories of Christian statues found in Malta, specifically in the parish church of `Ħaż-Żebbuġ` dedicated to `St Philip of Agira`. Please note that the images retrieved for the creation of this dataset were extracted from public domain sources and are not intended for commercial use.
+The `MCS Dataset` features `17` categories of Christian statues found in Malta, specifically in the parish church of `Ħaż-Żebbuġ` dedicated to `St Philip of Agira`, and some photos from other parishes. Please note that the images retrieved for the creation of this dataset were extracted from public domain sources and are not intended for commercial use.
 
 The categories in the MCS Dataset are:
 
-1. `Jesus has Risen`
-2. `Jesus praying in Gethsemane`
-3. `Saint Philip of Agira`
-4. `Simon of Cyrene`
-5. `The Betrayal of Judas`
-6. `The Cross`
-7. `The Crucifixion`
-8. `The Ecce Homo`
-9. `The Flogged`
-10. `The Lady of Sorrows`
-11. `The Monument`
-12. `The Redeemer`
-13. `The Veronica`
+1. `Christmas Cribs`
+2. `Jesus has Risen`
+3. `Jesus praying in Gethsemane`
+4. `Our Lady of Grace`
+5. `Saint Joseph`
+6. `Saint Philip of Agira`
+7. `Simon of Cyrene`
+8. `The Betrayal of Judas`
+9. `The Cross`
+10. `The Crucifixion`
+11. `The Ecce Homo`
+12. `The Flogged`
+13. `The Lady of Sorrows`
+14. `The Last Supper`
+15. `The Monument`
+16. `The Redeemer`
+17. `The Veronica`
 
 </p>
 
@@ -60,7 +64,7 @@ The categories in the MCS Dataset are:
 
 <p align="justify">
 
-The `MCS Dataset` consists of `2432` images distributed across the `14` classes. Illustrated below is the distribution of the dataset across the classes. Additionally it is also important to note that the dataset is split into `80%` training and `20%` testing sets. Furthermore, `Data Augmentation` techniques were also used to increase the size of the dataset.
+The `MCS Dataset` consists of `2,897` images distributed across the `17` classes. Illustrated below is the distribution of the dataset across the classes. Additionally it is also important to note that the dataset is split into `80%` training and `20%` testing sets. Furthermore, `Data Augmentation` techniques were also used to increase the size of the dataset.
 
 <p align='center'>
   <img src="Assets/image_distribution.png" alt="Dataset Distribution" width="80%" height="auto">
@@ -68,7 +72,7 @@ The `MCS Dataset` consists of `2432` images distributed across the `14` classes.
 
 </p>
 
-## MCS Classifier Model
+<!-- ## MCS Classifier Model
 
 <p align="justify">
 
@@ -95,9 +99,9 @@ On the other hand, a `confusion matrix` provides insight into the model's classi
 
 Additionally, the model evaluation results indicate that the `MCS Classifier` achieved a `Test Accuracy` of `0.71`, meaning that approximately `71%` of the test images were correctly classified. The `Test Loss` of `1.16` represents the average loss over all test samples, with lower values indicating better performance. With a `Test Precision` of `0.73`, the model correctly identified about `73%` of the relevant images out of the total images it classified as relevant. The `Test Recall` of `0.71` signifies that the model successfully captured `71%` of all relevant images in the dataset. Lastly, the `Test F1 Score` of `0.72` provides a balance between precision and recall, offering a holistic measure of the model's performance, with higher values indicating better overall performance in image classification tasks. 
 
-</p>
+</p> -->
 
-## MCS Classifier Predictions
+## MCS Classifier Model Predictions
 
 <p align="justify">
 Illustrated below are predictions made by the MCS Classifier Model on unseen images from the test dataset. The model demonstrates its ability to classify Maltese Christian statues accurately.
@@ -171,7 +175,7 @@ To get started, clone the repository and navigate to it:
 git clone https://github.com/mbar0075/Maltese-Christian-Statue-Classifier.git
 cd Maltese-Christian-Statue-Classifier
 ```
-
+<!-- 
 You can also clone the environment used for this project using the `environment.yml` file provided in the `Requirements` directory. To do so, you will need to have Anaconda installed on your machine. If you don't have Anaconda installed, you can download it from [here](https://www.anaconda.com/products/distribution). Once you have Anaconda installed, you can run the following commands to install the environment and activate it
 
 To install the environment, run the following command:
@@ -216,4 +220,4 @@ In case of any further issues, you can install `cuda` from the following links: 
 and install the corresponding `tensorflow` version from the following link: [TensorFlow](https://www.tensorflow.org/install/pip).
 </details>
 
-</p>
+</p> -->
