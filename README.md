@@ -16,13 +16,13 @@
 
 <p align="justify">
 
-The `Maltese Christian Statue (MCS) Classifier` project is not just a machine learning model; it embodies a deeper mission. Developed from the `MCS Dataset`, curated to represent 17 distinct categories of Maltese Christian statues, this project serves to preserve and celebrate Maltese religious culture. Its purpose extends beyond mere classification; it is a testament to the rich heritage of Malta, offering a glimpse into its religious traditions.
+The `Maltese Christian Statue (MCS) Classifier` project explores the question: Can Artificial Intelligence (AI) be utilised to recognise and differentiate between Maltese Christian statues in images? Built from the curated `MCS Image Classification Dataset`, which represents 17 distinct categories of Maltese Christian statues, this project aims to assist those unfamiliar with the culture or religion by offering an accessible window into Malta's rich religious heritage.
 
 `Image classification` is a fundamental task in computer vision, involving the process of categorising images into predefined classes or categories. It leverages machine learning algorithms to analyse the visual content of images and assign them to appropriate labels based on their features and characteristics. In the context of the MCS Classifier project, image classification techniques are employed to automatically identify and categorise Maltese Christian statues depicted in images.
 
 This initiative aims to safeguard and promote Maltese religious culture, especially during the solemn period of Lent. It serves as a bridge, introducing tourists to the intricacies of Maltese religious iconography, fostering understanding and appreciation.
 
-Employing sophisticated image classification techniques, the project integrates artificial intelligence into the realm of Maltese Christianity, introducing AI where it's traditionally less explored. However, it's crucial to emphasise that this project isn't designed for mockery or disrespect towards religious beliefs. On the contrary, it adopts a solemn tone, seeking to uplift and deepen religious engagement.
+Employing advanced image classification techniques, this project integrates artificial intelligence into the context of Maltese Christianity, a domain where such technology has been traditionally less explored. It is essential to underscore that the project is not intended to mock or disrespect religious beliefs. On the contrary, it adopts a respectful and reverent approach, aiming to enrich understanding and foster deeper engagement with Malta's religious heritage.
 
 Ultimately, the project aspires to contribute positively to the perpetuation and enrichment of Maltese religious heritage, potentially inspiring greater belief and dedication to its cause.
 
@@ -54,6 +54,7 @@ The categories in the MCS Dataset are:
 16. `The Redeemer`
 17. `The Veronica`
 
+Sample images from the MCS Dataset are displayed below:
 </p>
 
 <p align='center'>
@@ -64,7 +65,7 @@ The categories in the MCS Dataset are:
 
 <p align="justify">
 
-The `MCS Dataset` consists of `2,897` images distributed across the `17` classes. Illustrated below is the distribution of the dataset across the classes. Additionally it is also important to note that the dataset is split into `80%` training and `20%` testing sets. Furthermore, `Data Augmentation` techniques were also used to increase the size of the dataset.
+The `MCS Dataset` consists of `5,000` images distributed across the `17` classes. Illustrated below is the distribution of the dataset across the classes. Additionally it is also important to note that the dataset is split into `80%` training and `20%` testing sets. Furthermore, `Data Augmentation` techniques were also used to increase the size of the dataset.
 
 <p align='center'>
   <img src="Assets/image_distribution.png" alt="Dataset Distribution" width="80%" height="auto">

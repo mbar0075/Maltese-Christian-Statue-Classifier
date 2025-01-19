@@ -157,3 +157,5 @@ Augmented MCS Dataset/
 Augmented MCS Dataset1k/
 Augmented MCS Dataset Split/
 yolo11n.pt
+yolo11m-cls.pt
+yolo11x-cls.pt
