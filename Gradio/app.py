@@ -20,6 +20,13 @@ with open('categories.json', 'r', encoding='utf-8') as f1:
 with open('categories_synopsis.json', 'r', encoding='utf-8') as f2:
     categories_synopsis = json.load(f2)
 
+# Loading the Parishes
+with open('parishes.json', 'r', encoding='utf-8') as f3:
+    parishes = json.load(f3)
+
+# Default model
+default_model = "Model v2"
+
 # Model URLs
 models = {
     "Model v1": YOLO("https://huggingface.co/mbar0075/Maltese-Christian-Statue-Classification/resolve/main/MCS-Classify.pt").to(device),
@@ -28,32 +35,15 @@ models = {
     "Model v3 (Accurate)": YOLO("https://huggingface.co/mbar0075/Maltese-Christian-Statue-Classification/resolve/main/MCS-Classifyv3-Accurate.pt").to(device)
 }
 
-# For parishes
-parishes = {
-    0: "Birgu - Vittoriosa",
-    1: "Bormla - Cospicua",
-    2: "Isla - Senglea",
-    3: "Mosta",
-    4: "Nadur Għawdex",
-    5: "Naxxar",
-    6: "Rabat",
-    7: "Rabat - Victoria Għawdex",
-    8: "Raħal Ġdid - Paola",
-    9: "Valletta",
-    10: "Xagħra Għawdex",
-    11: "Xewkija Għawdex",
-    12: "Ħal Għaxaq",
-    13: "Ħal-Luqa",
-    14: "Ħal-Qormi",
-    15: "Ħaż-Żabbar",
-    16: "Ħaż-Żebbuġ",
-    17: "Żebbuġ Għawdex",
-    18: "Żejtun"
+parish_model_paths = {
+    "Model v1": "https://huggingface.co/mbar0075/Maltese-Christian-Statue-Classification/resolve/main/MCS-Classify-Parishv1.pt",
+    "Model v2": "https://huggingface.co/mbar0075/Maltese-Christian-Statue-Classification/resolve/main/MCS-Classify-Parishv2.pt"
 }
 
-parishes_model = YOLO("https://huggingface.co/mbar0075/Maltese-Christian-Statue-Classification/resolve/main/MCS-Classify-Parishv1.pt").to(device)
-
-default_model = "Model v2"
+# Loading the respective Parishes Model and Categories
+parishes_model_path = "Model v2"
+parishes_model = YOLO(parish_model_paths[parishes_model_path]).to(device)
+parishes_categories = parishes[parishes_model_path]
 
 def predict_image(image, model_name: str, size=(244, 244)) -> List[Tuple[str, str, float]]:
     """Predict the class of a given image and return sorted probabilities with categories."""
@@ -105,7 +95,7 @@ def predict_parish(image, size=(244, 244)) -> List[Tuple[str, float]]:
     sorted_indices = np.argsort(pred_probs)[::-1]  # Descending order
     sorted_predictions = [
         (
-            parishes[i],
+            parishes_categories[str(i)],
             round(pred_probs[i] * 100, 2)  # Convert to percentage
         )
         for i in sorted_indices
@@ -140,9 +130,8 @@ def classify_image(input_image, model_name):
 
     # Modify the first formatted prediction to include "From the Parish of ..."
     first_label, first_confidence = parish_predictions[0]
-    formatted_parish_predictions[f"From the Parish of {first_label} / Mill-Parroċċa ta' {first_label}"] = formatted_parish_predictions.pop(first_label)
+    formatted_parish_predictions[f"From the Parish of / Mill-Parroċċa ta' {first_label}"] = formatted_parish_predictions.pop(first_label)
 
-    
     # Get the label with the highest confidence
     highest_confidence_label = predictions[0][0]  # Assuming predictions are sorted by confidence
     highest_confidence_synopsis = categories_synopsis.get(highest_confidence_label, "No synopsis available.")
@@ -204,4 +193,4 @@ demo = gr.Interface(
 )
 
 # Launch the demo
-demo.launch()
+demo.launch()#share=True

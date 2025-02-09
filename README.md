@@ -22,6 +22,10 @@ The `Maltese Christian Statue (MCS) Classifier` project explores the question: C
 
 This initiative aims to safeguard and promote Maltese religious culture, especially during the solemn period of Lent. It serves as a bridge, introducing tourists to the intricacies of Maltese religious iconography, fostering understanding and appreciation.
 
+<p align='center'>
+  <img src="Assets/dataset.jpg" alt="Dataset" width="100%" height="auto">
+</p>
+
 Employing advanced image classification techniques, this project integrates artificial intelligence into the context of Maltese Christianity, a domain where such technology has been traditionally less explored. It is essential to underscore that the project is not intended to mock or disrespect religious beliefs. On the contrary, it adopts a respectful and reverent approach, aiming to enrich understanding and foster deeper engagement with Malta's religious heritage.
 
 Ultimately, the project aspires to contribute positively to the perpetuation and enrichment of Maltese religious heritage, potentially inspiring greater belief and dedication to its cause.
