@@ -149,15 +149,18 @@ def classify_image(input_image, model_name):
     )
 
 # Metadata
-title = "Maltese Christian Statue Image Classification ✝"
+title = "Maltese Christian Statue Classifier ✝"
+description_small = (
+    "Identify Maltese Christian Statues from Images using AI"
+)
 description = (
-    "This project aims to classify Maltese Christian statues and religious figures depicted in images. "
-    "Choose a model to classify images into categories of Maltese Christian statues."
+    "Simply upload an image and let the model do the rest!"
 )
 article = (
-    "The YOLO classification models are trained on datasets of Maltese Christian statues and religious figures. "
-    "The MCS Dataset is open-source and available for access through https://github.com/mbar0075/Maltese-Christian-Statue-Classifier.\n"
-    "\n © Matthias Bartolo, Miriam Bartolo Abela 2025. Licensed under the MIT License."
+    # "The YOLO classification models are trained on datasets of Maltese Christian statues and religious figures. "
+    # "The MCS Dataset is open-source and available for access through https://github.com/mbar0075/Maltese-Christian-Statue-Classifier.\n"
+    "© Matthias Bartolo 2025. Licensed under the MIT License."
+    # "Descriptions by Miriam Bartolo Abela." 
 )
 
 # Load examples
@@ -168,29 +171,156 @@ examples = [[f"{example_folder}/{example}"] for example in os.listdir(example_fo
 for example in examples:
     example.append(default_model)
 
-# Create the Gradio demo
-demo = gr.Interface(
-    fn=classify_image,
-    inputs=[
-        gr.Image(type="pil", label="Upload an image"),
-        gr.Dropdown(
-            choices=list(models.keys()),
-            value=default_model,
-            label="Select Model",
-            interactive=True
-        )
-    ],
-    outputs=[
-        gr.Label(num_top_classes=5, label="Predictions (English / Maltese)"),
-        gr.Label(num_top_classes=5, label="Parish Predictions"),
-        gr.Textbox(label="Synopsis / Aktar Tagħrif"),
-        gr.Number(label="Prediction speed (FPS)")
-    ],
-    title=title,
-    description=description,
-    article=article,
-    examples=examples
-)
+css = """
+    <style>
+        body {
+            background-color: #2D1B5A !important;
+            color: white !important;
+        }
+        h1 {
+            text-align: center !important;
+            font-size: 3.5em !important;
+            color: #6A0DAD !important; /* Dark Purple */
+        }
+        h2 {
+            text-align: center !important;
+            font-size: 2.5em !important;
+            color: #B084E9 !important; /* Lighter Purple */
+        }
+        h3 {
+            text-align: center !important;
+            font-size: 2em !important;
+            color: white !important; /* White */
+        }
+        h4 {
+            text-align: center !important;
+            font-size: 1.5em !important;
+            color: white !important; /* White */
+        }
+        h5 {
+            text-align: left !important;
+            font-size: 1.5em !important;
+            color: white !important; /* White */
+            font-weight: bold !important;
+            margin-top: 50px !important;
+        }
+        .dataset-section {
+            text-align: center !important;
+            font-size: 2em !important;
+            margin-top: 20px !important;
+        }
+        .dataset-section a {
+            color: #4A90E2 !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+        }
+        .dataset-section a:hover {
+            text-decoration: underline !important;
+        }
+        #links {
+            text-align: center !important;
+            font-size: 2em !important;
+        }
+        #links a {
+            color: #93B7E9 !important;
+            text-decoration: none !important;
+        }
+        #links a:hover {
+            text-decoration: underline !important;
+        }
+        .example-section.show {
+            display: block !important;
+        }
+        .example-section.hide {
+            display: none !important;
+        }
+        .example-section {
+            text-align: center !important;
+            font-size: 1em !important;
+            margin-top: 20px !important;
+            margin-bottom: 20px !important;
+        }
+        .gr-accordion-header {
+            font-weight: bold !important;
+        }
+    </style>
+"""
 
-# Launch the demo
-demo.launch()#share=True
+# Create the Gradio demo using Blocks
+with gr.Blocks(theme=gr.themes.Soft()) as demo:
+    # Inject custom CSS into the interface using gr.HTML
+    gr.HTML(css)
+    
+    with gr.Row():
+        gr.Markdown(f"# {title}")
+    
+    with gr.Row():
+        gr.Markdown(f"## {description_small}")
+
+    with gr.Row():
+        gr.Markdown(f"### {description}")
+    
+    with gr.Row():
+        gr.Markdown(
+            "### <a href='https://github.com/mbar0075/Maltese-Christian-Statue-Classifier/blob/main/Maltese%20Christian%20Statue%20Classification%20presentation.pdf'> Presentation</a>   | <a href='https://github.com/mbar0075/Maltese-Christian-Statue-Classifier'> Code </a>"
+        )
+
+    # Path to your local image
+    header_path = os.path.join("header", "1.jpg")
+
+    # Print an image
+    with gr.Row():# For images needs to be HTML
+        gr.HTML("""
+            <div style="text-align: center;">
+                <h5 style="margin-bottom: 10px;">Explanation of the Process:</h5>
+                <img src="https://huggingface.co/spaces/mbar0075/Maltese-Christian-Statue-Classification/resolve/main/header_image.png" alt="Header Explanation" style="width: 100%; height: auto; margin-bottom: 20px;">
+                <h5 style="margin-top: 10px;">Try It Out Yourself:</h5>
+            </div>
+        """)
+
+    
+    with gr.Row():
+        # Left Column (Image and Dropdown)
+        with gr.Column(scale=2):
+            input_image = gr.Image(type="pil", label="Upload an image", interactive=True)
+            model_dropdown = gr.Dropdown(
+                choices=list(models.keys()),
+                value=default_model,
+                label="Select Model",
+                interactive=True
+            )
+            
+        # Right Column (Predictions)
+        with gr.Column(scale=2):
+            output_predictions = gr.Label(num_top_classes=5, label="Predictions (English / Maltese)")
+            output_parish_predictions = gr.Label(num_top_classes=5, label="Parish Predictions")
+            output_fps = gr.Number(label="Prediction speed (FPS)")
+
+    # Predictions in the same row
+    with gr.Row():
+        # Middle (Synopsis)
+        output_synopsis = gr.Textbox(label="Synopsis / Aktar Tagħrif")
+    
+    with gr.Row():
+        # Clear button
+        clear_button = gr.ClearButton([input_image, model_dropdown, output_predictions, output_parish_predictions, output_synopsis, output_fps])
+
+        # Call the classify_image function
+        gr.Button("Classify").click(
+            classify_image, 
+            inputs=[input_image, model_dropdown], 
+            outputs=[output_predictions, output_parish_predictions, output_synopsis, output_fps]
+        )
+    
+    # with gr.Row(elem_id="Examples"):
+    with gr.Accordion("Try Out Some Examples / Prova Xi Eżempji", open=False, elem_classes="example-section"):  # open=False keeps it collapsed initially
+        gr.Examples(
+            examples=examples,  # The list of examples
+            inputs=[input_image, model_dropdown]  # Inputs to use the examples with
+        )
+
+    with gr.Row():
+        gr.Markdown(f"#### {article}")
+
+# Launch the Gradio demo
+demo.launch()

@@ -6,7 +6,7 @@ colorTo: purple
 sdk: gradio
 sdk_version: 5.12.0
 app_file: app.py
-pinned: false
+pinned: true
 license: mit
 short_description: Ability to Classify Maltese Christian Statues.
 ---
